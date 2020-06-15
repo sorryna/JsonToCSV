@@ -16,7 +16,7 @@
 * เอา model ForExport มาเขียนไฟลล์
 
 ## Platform and Nuget
-* dotnet -> https://dotnet.microsoft.com/download/visual-studio-sdks
-* MongoDB.Driver -> https://www.nuget.org/packages/MongoDB.Driver
-* Newtonsoft.Json -> https://www.nuget.org/packages/Newtonsoft.Json
-* CsvHelper -> https://www.nuget.org/packages/CsvHelper
+* [dotnet](https://dotnet.microsoft.com/download/visual-studio-sdks)
+* [MongoDB.Driver](https://www.nuget.org/packages/MongoDB.Driver)
+* [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json)
+* [CsvHelper](https://www.nuget.org/packages/CsvHelper)
