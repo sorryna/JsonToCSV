@@ -10,16 +10,17 @@ namespace JsonToCSV
     {
         public void WriteFileCommu(string fileName, List<CommunitySample> dataLst)
         {
-            var pathFolder = $@"ExportData\";
-            var pathFile = $@"ExportData\{fileName}.csv";
+            var pathFolder = $@"F:\CSV"; // folder ที่ต้องการ export file
+            var pathFile = $@"F:\CSV\{fileName}.csv"; // fileName path
 
-            if (!Directory.Exists(pathFolder))
+            if (!Directory.Exists(pathFolder)) // check ว่ามี folder ไหม
             {
-                Directory.CreateDirectory(pathFolder);
+                Directory.CreateDirectory(pathFolder); //  ถ้าไม่มีจะสร้าง folder ให้
             }
-
-            var dataWrite = dataLst.Select(it => new ForExport
+            // model ForExport สามารถเข้าไปสร้าง ตัวแปรที่อยากได้ในการเขียนไฟล์
+            var dataWrite = dataLst.Select(it => new ForExport 
             {
+                // กำหนดตัวค่าให้ตัวแปลที่เพิ่มใน model Export
                 _id = it._id,
                 Status = it.Status
             })
@@ -27,7 +28,7 @@ namespace JsonToCSV
             using (var writer = new StreamWriter(pathFile))
             using (var csv = new CsvWriter(writer))
             {
-                csv.WriteRecords(dataWrite);
+                csv.WriteRecords(dataWrite); // เขียนไฟล์
             }
         }
 

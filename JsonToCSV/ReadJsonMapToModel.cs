@@ -9,10 +9,10 @@ namespace JsonToCSV
     public class ReadJsonMapToModel
     {
 
-        private static string _path = @""; // กำหนด path ของ text file
+        private static string _path = @""; // กำหนด path ของ text file JSON
         public List<CommunitySample> Community(List<SurveyData> survey)
         {
-            var ComList = survey.Where(it => it.SampleType == "c").ToList();
+            var ComList = survey.Where(it => it.SampleType == "c").ToList(); // กรองเอาเฉพาะ สน.2 (community)
             var listCom = new List<CommunitySample>();
             foreach (var com in ComList)
             {
@@ -23,7 +23,7 @@ namespace JsonToCSV
         }
 
         public List<BuildingSample> Building(List<SurveyData> survey){
-            var BuildingList = survey.Where(it => it.SampleType == "b").ToList();
+            var BuildingList = survey.Where(it => it.SampleType == "b").ToList(); // กรองเอาเฉพาะ สน.1-1 (building)
             var listBuilding = new List<BuildingSample>();
             foreach (var building in BuildingList)
             {
@@ -34,7 +34,7 @@ namespace JsonToCSV
         }
 
         public List<HouseHoldSample> HouseHold(List<SurveyData> survey){
-            var UnitList = survey.Where(it => it.SampleType == "u").ToList();
+            var UnitList = survey.Where(it => it.SampleType == "u").ToList(); // กรองเอาเฉพาะ สน.1-2 (Household)
             var listUnit = new List<HouseHoldSample>();
             foreach (var unit in UnitList)
             {
@@ -50,8 +50,8 @@ namespace JsonToCSV
 
             using (var reader = new StreamReader(path))
             {
-                var jsonString = reader.ReadToEnd();
-                var model = JsonConvert.DeserializeObject<T>(jsonString);
+                var jsonString = reader.ReadToEnd(); // อ่านไฟล์ Text ที่เป็น JSON  
+                var model = JsonConvert.DeserializeObject<T>(jsonString); // map to model
                 return model;
             }
         }

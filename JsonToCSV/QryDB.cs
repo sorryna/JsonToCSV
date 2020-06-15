@@ -9,6 +9,7 @@ namespace JsonToCSV
         private static IMongoCollection<SurveyData> surveyData { get; set; }
         public QryDB()
         {
+            // connect to data base
             var connectionString = "mongodb://firstclass:Th35F1rstCla55@mongoquickx4h3q4klpbxtq-vm0.southeastasia.cloudapp.azure.com/wdata";
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("wdata");
