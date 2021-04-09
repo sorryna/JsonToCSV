@@ -66,18 +66,20 @@ namespace JsonToCSV
                 Directory.CreateDirectory(pathFolder);
             }
 
-            var dataWrite = dataLst.Select(it => new ForExportUnit
-            {
-                _id = it._id,
-                Status = it.Status,
-                RicePlant = it.Agriculture?.RicePlant?.FieldCount
-            })
-            .ToList();
+            // var dataWrite = dataLst.Select(it => new HouseHoldSample
+            // {
+            //     _id = it._id,
+            //     Status = it.Status,
+            //     EA = it.EA,
+            //     Agriculture = it.Agriculture,
+                
+            // })
+            // .ToList();
 
             using (var writer = new StreamWriter(pathFile))
             using (var csv = new CsvWriter(writer))
             {
-                csv.WriteRecords(dataWrite);
+                csv.WriteRecords(dataLst);
             }
         }
     }

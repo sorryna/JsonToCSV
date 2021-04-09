@@ -26,11 +26,11 @@ namespace JsonToCSV
 
                     // Write CSV file
                     var write = new WriteFile();
-                    write.WriteFileCommu("C"+item._id, modelCommu);
-                    write.WriteFileBuilding("B"+item._id, modelBuilding);
-                    write.WriteFileUnit("U"+item._id, modelHousehold);
+                    write.WriteFileCommu("C" + item._id, modelCommu);
+                    write.WriteFileBuilding("B" + item._id, modelBuilding);
+                    write.WriteFileUnit("U" + item._id, modelHousehold);
                 }
-                catch (System.Exception e) 
+                catch (System.Exception e)
                 {
                     System.Console.WriteLine(e);
                 }

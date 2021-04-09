@@ -60,9 +60,9 @@ namespace JsonToCSV
                     var unt = ReadModelForm<HouseHoldSample>(unit.ContainerName, unit.BlobName);
                     listUnit.Add(unt);
                 }
-                catch (System.Exception)
+                catch (System.Exception e)
                 {
-                    throw;
+                    System.Console.WriteLine(e);
                 }
             }
             return listUnit;
