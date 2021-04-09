@@ -69,7 +69,8 @@ namespace JsonToCSV
             var dataWrite = dataLst.Select(it => new ForExport
             {
                 _id = it._id,
-                Status = it.Status
+                Status = it.Status,
+                RicePlant = it.Agriculture?.RicePlant?.FieldCount
             })
             .ToList();
 

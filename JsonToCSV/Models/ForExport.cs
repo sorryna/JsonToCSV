@@ -4,5 +4,11 @@ namespace JsonToCSV.Models
     {
         public string _id { get; set; }
         public string Status { get; set; }
+
+        public string REG { get; set; }
+        public string CWT { get; set; }
+        public string AMP { get; set; }
+        public string TAM { get; set; }
+        public int? RicePlant { get; set; }
     }
 }

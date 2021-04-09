@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
 
-namespace WebManageAPI.Models
+namespace JsonToCSV.Models
 {
   
     public class EAInfo

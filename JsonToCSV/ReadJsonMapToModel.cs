@@ -9,7 +9,7 @@ namespace JsonToCSV
     public class ReadJsonMapToModel
     {
 
-        private static string _path = @""; // กำหนด path ของ text file JSON
+        private static string _path = @"F:\usefull"; // กำหนด path ของ text file JSON
         public List<CommunitySample> Community(List<SurveyData> survey)
         {
             var ComList = survey.Where(it => it.SampleType == "c").ToList(); // กรองเอาเฉพาะ สน.2 (community)
