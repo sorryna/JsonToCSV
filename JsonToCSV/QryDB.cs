@@ -18,10 +18,21 @@ namespace JsonToCSV
             EaInfo = database.GetCollection<EAInfo>("ea");
         }
 
-        public List<EAInfo> GetEAInfos(string cwt, string amp, string tam)
+        public List<EAInfo> GetEAInfosTAM(string cwt, string amp, string tam)
         {
             return EaInfo.Find(it => it.CWT == cwt && it.AMP == amp && it.TAM == tam).ToList();
         }
+
+        public List<EAInfo> GetEAInfosAMP(string cwt, string amp)
+        {
+            return EaInfo.Find(it => it.CWT == cwt && it.AMP == amp).ToList();
+        }
+
+         public List<EAInfo> GetEAInfosCWT(string cwt)
+        {
+            return EaInfo.Find(it => it.CWT == cwt).ToList();
+        }
+        
         public List<SurveyData> Qry(string EAcode)
         {
             var survey = surveyData.Aggregate()

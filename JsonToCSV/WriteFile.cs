@@ -18,7 +18,7 @@ namespace JsonToCSV
                 Directory.CreateDirectory(pathFolder); //  ถ้าไม่มีจะสร้าง folder ให้
             }
             // model ForExport สามารถเข้าไปสร้าง ตัวแปรที่อยากได้ในการเขียนไฟล์
-            var dataWrite = dataLst.Select(it => new ForExport 
+            var dataWrite = dataLst.Select(it => new ForExportCommu 
             {
                 // กำหนดตัวค่าให้ตัวแปลที่เพิ่มใน model Export
                 _id = it._id,
@@ -42,7 +42,7 @@ namespace JsonToCSV
                 Directory.CreateDirectory(pathFolder);
             }
 
-            var dataWrite = dataLst.Select(it => new ForExport
+            var dataWrite = dataLst.Select(it => new ForExportBuilding
             {
                 _id = it._id,
                 Status = it.Status
@@ -66,7 +66,7 @@ namespace JsonToCSV
                 Directory.CreateDirectory(pathFolder);
             }
 
-            var dataWrite = dataLst.Select(it => new ForExport
+            var dataWrite = dataLst.Select(it => new ForExportUnit
             {
                 _id = it._id,
                 Status = it.Status,

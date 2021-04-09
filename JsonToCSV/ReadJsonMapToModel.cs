@@ -16,30 +16,54 @@ namespace JsonToCSV
             var listCom = new List<CommunitySample>();
             foreach (var com in ComList)
             {
-                var commu = ReadModelForm<CommunitySample>(com.ContainerName, com.BlobName);
-                listCom.Add(commu);
+                try
+                {
+                    var commu = ReadModelForm<CommunitySample>(com.ContainerName, com.BlobName);
+                    listCom.Add(commu);
+                }
+                catch (System.Exception)
+                {
+                    throw;
+                }
             }
             return listCom;
         }
 
-        public List<BuildingSample> Building(List<SurveyData> survey){
+        public List<BuildingSample> Building(List<SurveyData> survey)
+        {
             var BuildingList = survey.Where(it => it.SampleType == "b").ToList(); // กรองเอาเฉพาะ สน.1-1 (building)
             var listBuilding = new List<BuildingSample>();
             foreach (var building in BuildingList)
             {
-                var bd = ReadModelForm<BuildingSample>(building.ContainerName, building.BlobName);
-                listBuilding.Add(bd);
+                try
+                {
+                    var bd = ReadModelForm<BuildingSample>(building.ContainerName, building.BlobName);
+                    listBuilding.Add(bd);
+                }
+                catch (System.Exception)
+                {
+                    throw;
+                }
             }
             return listBuilding;
+
         }
 
-        public List<HouseHoldSample> HouseHold(List<SurveyData> survey){
+        public List<HouseHoldSample> HouseHold(List<SurveyData> survey)
+        {
             var UnitList = survey.Where(it => it.SampleType == "u").ToList(); // กรองเอาเฉพาะ สน.1-2 (Household)
             var listUnit = new List<HouseHoldSample>();
             foreach (var unit in UnitList)
             {
-                var unt = ReadModelForm<HouseHoldSample>(unit.ContainerName, unit.BlobName);
-                listUnit.Add(unt);
+                try
+                {
+                    var unt = ReadModelForm<HouseHoldSample>(unit.ContainerName, unit.BlobName);
+                    listUnit.Add(unt);
+                }
+                catch (System.Exception)
+                {
+                    throw;
+                }
             }
             return listUnit;
         }
